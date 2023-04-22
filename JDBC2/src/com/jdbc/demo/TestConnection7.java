@@ -1,14 +1,18 @@
 package com.jdbc.demo;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import com.mysql.cj.jdbc.Driver;
 
-public class TestConnection4 
+public class TestConnection7
 {
 	public static void main(String[] args)
 	{
@@ -22,11 +26,11 @@ public class TestConnection4
 			Statement cs = c.createStatement();
 			
 			String query="select * from student";
-			//String query="insert into student (id,name,course,email) values (8,'amo','xyz','amo@134')";
-			boolean execute = cs.execute(query);
-			System.out.println(execute);
 			
-			ResultSet rs = cs.getResultSet();
+			//ResultSet execute = cs.executeQuery(query);
+			//System.out.println(execute);
+			
+			ResultSet rs = cs.executeQuery(query);
 			System.out.println(rs);
 			
 			
